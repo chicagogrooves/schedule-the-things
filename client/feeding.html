@@ -1,0 +1,39 @@
+<template name="feeding">
+    <h1>It's Feeding Time!</h1>
+
+    <div class="row">
+      Tap a side to start.
+    </div>
+
+    <div class="row">
+      <button class="col-md-2 which btn btn-primary {{active 'L'}}" data-which="L">L</button>
+      <button class="col-md-2 which btn btn-primary {{active 'R'}}" data-which="R">R</button>
+      or
+      <button class="btn btn-primary btn-bottle {{active 'bottle'}}" >Bottle</button>
+      <span class="bottle-params {{showBottleParams}}">
+        <input name="amount" class="bottleAmount" value="{{bottleAmount}}"/> oz
+        <button class="btn btn-primary bottle-ctl bottle-up" data-amount=".5">+</button>
+        <button class="btn btn-primary bottle-ctl bottle-down" data-amount="-.5">-</button>
+      </span>
+    </div>
+
+    <div class="row">
+      Started at: {{when}}
+    </div>
+
+    <div class="row">
+      Elapsed: {{elapsed}}
+    </div>
+
+    <div class="row">
+      <button id="btn-end" class="btn btn-info">End</button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-info btnHistory">Back to History</button>
+    </div>
+    
+    <pre>
+      {{currentFeeding}}
+    </pre>
+</template>

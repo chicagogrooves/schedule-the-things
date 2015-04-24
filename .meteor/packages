@@ -1,0 +1,27 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+coffeescript
+iron:router
+mrt:define
+service-configuration
+insecure
+
+deanius:at-at
+deanius:promise
+dburles:collection-helpers
+
+twbs:bootstrap
+momentjs:moment
+fastclick
+frozeman:reactive-timer
+rzymek:fullcalendar
+
+accounts-ui
+accounts-google
+accounts-base
+
+houston:admin
