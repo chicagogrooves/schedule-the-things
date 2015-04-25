@@ -1,20 +1,19 @@
 {
-    "name": "babylog",
-    "version": "0.0.2",
-    "dependencies": {},
-    "devDependencies": {},
-    "repository": {
-        "type": "git",
-        "url": "http://github.com/chicagogrooves/babylog.git"
-    },
-    "scripts": {
-        "start": "meteor -p 3120",
-        "test": "coffeelint .",
-        "deploy": "meteor deploy babylog.meteor.com",
-        "demo": "meteor deploy babylog-demo.meteor.com",
-        "update": "git reset --hard HEAD; meteor update; git add .; git commit -m 'Meteor Update'"
-    },
-    "engines": {
-        "node": ">=0.10.0"
-    }
+  "name": "schedule-the-things",
+  "version": "0.0.2",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/chicagogrooves/schedule-the-things.git"
+  },
+  "scripts": {
+    "start": "meteor -p 3120",
+    "test": "coffeelint .",
+    "deploy": "meteor deploy schedule-the-things.meteor.com",
+    "update": "git stash; meteor update; git add .; git commit -m 'Meteor Update'; git stash pop"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
 }

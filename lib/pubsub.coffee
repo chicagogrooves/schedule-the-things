@@ -1,14 +1,14 @@
-@Feedings = new Mongo.Collection("feedings")
+@Appointments = new Mongo.Collection("appointments")
 @DaysAtATime = 2
 @tzAdjust = 19
 
 @currentFeeding = ->
-  Feedings.find {completed: {$ne: true}},
+  Appointments.find {completed: {$ne: true}},
     limit: 1
     sort: [["time", "desc"]]
 
 Meteor.atServer ->
-  Meteor.publish "feedings", (daysBack = DaysAtATime) ->
+  Meteor.publish "appointments", (daysBack = DaysAtATime) ->
     howfar = moment(new Date)
       .startOf("day")
       .subtract
@@ -16,7 +16,7 @@ Meteor.atServer ->
         hours: tzAdjust # needed for prod only, cuz - timezones?
       .toDate()
 
-    Feedings.find
+    Appointments.find
       # time:
       #   $gt: howfar
       users:
@@ -25,4 +25,4 @@ Meteor.atServer ->
     , sort: [["time", "desc"]], limit: 128 # hack for speed :/
 
 Meteor.atClient ->
-  Meteor.subscribe "feedings"
+  Meteor.subscribe "appointments"
